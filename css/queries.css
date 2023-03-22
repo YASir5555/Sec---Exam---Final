@@ -1,0 +1,54 @@
+/* ************************************* */
+/*  BELOW   1008px   */
+/* ************************************* */
+@media (max-width: 63em) {
+  html {
+    font-size: 58%;
+  }
+  .grid {
+    gap: 4.8rem;
+    transition: all 0.7s;
+  }
+  .container {
+    min-width: 85rem;
+    transition: all 0.7s;
+  }
+}
+/* ************************************* */
+/*  BELOW   832px   */
+/* ************************************* */
+@media (max-width: 52em) {
+  html {
+    font-size: 56%;
+  }
+  .grid {
+    gap: 3.6rem;
+    transition: all 0.7s;
+  }
+  .container {
+    min-width: 70rem;
+    transition: all 0.7s;
+  }
+  .icon-area {
+    display: flex;
+    gap: 0.7rem;
+  }
+}
+
+/* ************************************* */
+/*  BELOW   656px   */
+/* ************************************* */
+@media (max-width: 41em) {
+  html {
+    font-size: 54%;
+  }
+  body {
+    min-height: 120vh;
+  }
+
+  .grid {
+    grid-template-columns: 40rem;
+    justify-content: center;
+    transition: all 1s;
+  }
+}

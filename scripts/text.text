@@ -1,0 +1,322 @@
+// ////////// Drag & Drop /////////////////
+
+let columnsDrag = document.querySelectorAll('.list');
+
+const dragTask = () => {
+  let tasks = document.querySelectorAll('.task-area');
+  let drag = null;
+
+  tasks.forEach((task) => {
+    task.addEventListener('dragstart', () => {
+      drag = task;
+      task.style.opacity = '0.5';
+    });
+  });
+  tasks.forEach((task) => {
+    task.addEventListener('dragend', () => {
+      drag = null;
+      task.style.opacity = '1';
+    });
+  });
+
+  columnsDrag.forEach((col) => {
+    col.addEventListener('dragover', (e) => {
+      e.preventDefault();
+    });
+    col.addEventListener('dragleave', () => {});
+    col.addEventListener('drop', () => {
+      col.append(drag);
+    });
+  });
+};
+
+window.onload = () => {
+  dragTask();
+};
+
+
+
+    //   //// Create Error Message
+    // if (taskInput.value !== '') {
+
+    //  // const errorArea = document.createElement('div');
+    //   // errorArea.className = 'error-area';
+    //   // errorArea.textContent =
+    //   // 'Yksdjflkjsdfkl;lk;kk;lk;lk;lk;lk;lk;lk;lk;lk;lksdfjsdfjlkjjjkl';
+
+    //   // taskLi.insertAdjacentElement('afterend', errorArea);
+
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const list = document.querySelectorAll('list');
+const userInput = document.getElementById('userInput');
+const iconDelete = document.getElementsByClassName('icon-delete');
+const iconEdit = document.getElementsByClassName('icon-edit');
+
+// Select all buttons
+// const addBtn = document.querySelector('.btn-add-task');
+
+// const columns = [
+//   { id: 1, title: 'Not Started', tasks: [] },
+//   { id: 2, title: 'In Progress', tasks: [] },
+//   { id: 3, title: 'Completed', tasks: [] },
+// ];
+
+// const addBtn = document.querySelectorAll('.btn-add-task');
+
+// columns.forEach((col) => {
+//   const root = document.getElementById('board');
+//   const columnEl = document.createElement('div');
+//   columnEl.className = 'new-task';
+
+//   const columnTitleEl = document.createElement('h2');
+//   columnEl.id = col.id;
+//   columnTitleEl.innerText = col.title;
+//   columnEl.appendChild(columnTitleEl);
+
+//   addBtn.forEach((btn) => {
+//     btn.addEventListener('click', function () {
+//       const taskInput = document.createElement('div');
+//       taskInput.className = 'task';
+//       taskInput.contentEditable = 'true';
+//       taskInput.style.cursor = 'auto';
+
+//       const list = document.querySelectorAll('.list');
+
+//       list.forEach((listItem) => {
+//         listItem.appendChild(taskInput);
+//       });
+//     });
+//   });
+
+//   root.appendChild(columnEl);
+// });
+
+const columns = [
+  { id: 1, title: 'Not Started', tasks: [] },
+  { id: 2, title: 'In Progress', tasks: [] },
+  { id: 3, title: 'Completed', tasks: [] },
+];
+
+columns.forEach((col) => {
+  const taskLi = document.createElement('li');
+
+  taskLi.className = 'new-task';
+  taskLi.innerHTML = `<div class="task-area">
+    <input type="text" class="task-text" id="userInput" />
+    <div class="icon-area">
+    <i class="fa-solid fa-trash icon icon-delete"></i>
+    <i class="fa-regular fa-pen-to-square icon icon-edit"></i>
+  </div>
+    </div>`;
+
+  addBtn.addEventListener('click', function () {
+    const taskInput = document.createElement('div');
+
+    const list = document.querySelectorAll('list');
+    list.appendChild(taskInput);
+  });
+});
+
+// //////// Functions
+
+const addTask = () => {};
+
+// const addTask = () => {
+// const taskLi = document.createElement('li');
+
+// taskLi.className = 'new-task';
+// taskLi.innerHTML = `<div class="task-area">
+//     <input type="text" class="task-text" id="userInput" />
+//     <div class="icon-area">
+//     <i class="fa-solid fa-trash icon icon-delete"></i>
+//     <i class="fa-regular fa-pen-to-square icon icon-edit"></i>
+//   </div>
+//     </div>`;
+
+//   const parentElement = this.parentElement;
+
+//   parentElement.appendChild(taskLi);
+// };
+// Loop through th buttons
+
+// addBtn.forEach((btn) => {
+//   btn.addEventListener('click', addTask);
+// });
+
+// const addTask = () => {
+//   const taskLi = document.createElement('li');
+//   taskLi.className = 'new-task';
+//   taskLi.innerHTML = `<div class="task-area">
+//   <input type="text" class="task-text" id="userInput" />
+//   <div class="icon-area">
+//   <i class="fa-solid fa-trash icon icon-delete"></i>
+//   <i class="fa-regular fa-pen-to-square icon icon-edit"></i>
+// </div>
+//   </div>`;
+
+//   tasks1.append(taskLi);
+
+//
+// };
+
+// addBtn.addEventListener('click', addTask);
+
+
+
+
+
+const list = document.querySelector('list');
+const userInput = document.getElementById('userInput');
+const iconDelete = document.getElementsByClassName('icon-delete');
+const iconEdit = document.getElementsByClassName('icon-edit');
+
+// Select all buttons
+const addBtn = document.querySelector('.btn-add-task');
+
+const addTask = () => {
+  const taskLi = document.createElement('li');
+  taskLi.className = 'new-task';
+  taskLi.innerHTML = `<div class="task-area">
+  <input type="text" class="task-text" id="userInput" />
+  <div class="icon-area">
+  <i class="fa-solid fa-trash icon icon-delete"></i>
+  <i class="fa-regular fa-pen-to-square icon icon-edit"></i>
+</div>
+  </div>`;
+
+  list.append(taskLi);
+};
+
+addBtn.addEventListener('click', addTask);
+
+
+
+// const addBtn = document.querySelectorAll('.btn');
+
+// addBtn.forEach((btn) => {
+//   btn.addEventListener('click', () => {
+//     const taskLi = document.createElement('li');
+
+//     taskLi.className = 'new-task';
+//     taskLi.innerHTML = `
+//     <div class="task-area">
+//       <input type="text" class="task-text" id="userInput" />
+//      <div class="icon-area">
+//          <i class="fa-solid fa-trash icon icon-delete"></i>
+//          <i class="fa-regular fa-pen-to-square icon icon-edit"></i>
+//      </div>
+//     </div>`;
+//   });
+// });

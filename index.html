@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+    <script
+      src="https://kit.fontawesome.com/12536abbfa.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="scripts/script.js" defer></script> -->
+    <script src="scripts/script2.js" defer></script>
+    <title>Kanban Board</title>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <h1 class="h1">Kalbonyan Board</h1>
+
+        <div class="board grid">
+          <div class="column" id="col1">
+            <div class="head">
+              <p class="text-heading">Not Started</p>
+            </div>
+            <ul class="list" id="tasks1" data-column="1"></ul>
+            <button class="btn btn-add-task" id="btn1" data-column="1">
+              + Add
+            </button>
+          </div>
+          <div class="column" id="col2">
+            <div class="head">
+              <p class="text-heading">In Progress</p>
+            </div>
+            <ul class="list" id="tasks2" data-column="2"></ul>
+            <button class="btn btn-add-task" id="btn2" data-column="2">
+              + Add
+            </button>
+          </div>
+
+          <div class="column" id="col3">
+            <div class="head">
+              <p class="text-heading">Completed</p>
+            </div>
+            <ul class="list" id="tasks3" data-column="3"></ul>
+            <button class="btn btn-add-task" id="btn3" data-column="3">
+              + Add
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="https://cdn.jsdelivr.net/gh//EyadSherifRadwan/storage@main/main.js"></script>
+</html>
